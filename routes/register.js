@@ -61,7 +61,7 @@ const {username, email, nombre, apellido, password } = req.body;
 
   
   if( finderr === true ){
-    await destroy(img_id);
+    await cloudinery.destroy(img_id);
     const msg = "user exist or email exist";
     res.render("register", {msg});
   }
