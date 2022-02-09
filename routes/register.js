@@ -90,6 +90,7 @@ const {username, email, nombre, apellido, password } = req.body;
     html: link
   }
   //envio mail con token
+  console.log("aqui");
   transport.sendMail(emailMsg);
   res.redirect("/register/sendMail");
   }
