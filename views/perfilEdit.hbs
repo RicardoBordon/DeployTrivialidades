@@ -1,0 +1,76 @@
+{{>NavBarProfiles}}
+<div class="container emp-profile">
+            <form method="post"  action="perfilEdit" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img name="imagen_id" src="{{imgURL}}" alt="foto-perfil"/>
+                            <input id="imgsinURL" name="imgsinURL" value="{{imgsinURL}}" hidden/>
+                            <div class="file btn btn-lg btn-primary">
+                                <input id="img_fl" name="img_fl" type="file">Change Photo</input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                            <input id="img_id" name="img_id" type="text" value="{{usuario.imagen}}" hidden />
+                                    <h3 name="user">
+                                        {{usuario.user}}
+                                    </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-success" name="btnAddMore"/>Save changes</button>
+                    </div>
+                </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <input name="userprev" class="form-control text-capitalize" value="{{usuario.user}}" hidden></input>
+                                                 <input name="username" class="form-control text-capitalize" value="{{usuario.user}}"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input name="nombre" class="form-control text-capitalize" value="{{usuario.nombre}}"></input>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Last Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input name="apellido" class="form-control text-capitalize" value="{{usuario.apellido}}"></input>
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email:</label>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <button name="email" class="form-control btn-disable" aria-disabled="false" disabled>{{usuario.email}}</button>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+    
+                        <p class="text-danger text-center fw-bolder fs-4 m-3 ">{{msg}}</p>
+
+                    </div>
+                    </form>
+                         <form action="perfilEdit/deleteUser" class="row">
+                <div class="text-center pt-5 ">
+                <button type="submit" class="btn btn-danger col-md-2">Delete User</button>
+                <a class="btn btn-dark col-md-1" href="perfil" role="button">Cancel</a>
+                </div>
+              </form>
+     </div> 
+</div>

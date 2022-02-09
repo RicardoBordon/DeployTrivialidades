@@ -1,0 +1,65 @@
+{{>NavBarProfiles}}
+<div class="container emp-profile">
+    <form method="post" action="perfil">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="profile-img">
+                    <img src="{{imgURL}}" alt="foto-perfil" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h3 name="user">
+                        {{usuario.user}}
+                    </h3>
+                    <p class="proile-rating">BEST SCORE: <span>{{usuario.score}}</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <input type="submit" class="btn btn-warning" name="btnAddMore" value="Edit Profile" />
+            </div>
+        </div>
+        <div iclass="col-md-8">
+            <div class="tab-content profile-tab p-5" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>User Id</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p name="user"> {{usuario.user}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Name:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{usuario.nombre}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Last Name:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{usuario.apellido}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label name="email">Email:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>{{usuario.email}}</p>
+                        </div>
+                    </div>
+                </div>
+    </form>
+</div>
