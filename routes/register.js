@@ -80,7 +80,7 @@ const {username, email, nombre, apellido, password } = req.body;
     
   //genero el token a partir de un cod aleatorio y mail  
   let code = uuidv4();
-  const token = mdlUsers.getToken({email, code });
+  const token = await mdlUsers.getToken({email, code });
   const link = `<a href=https://trivialidades.herokuapp.com/register/confirm/${ token }>CONFIRMAR EMAIL</a>`;
 
   const emailMsg = {
@@ -100,7 +100,7 @@ const {username, email, nombre, apellido, password } = req.body;
   //la cual es unica, se cambiara el campo token segun email a VERIFIED
 router.get("/confirm/:token", async (req, res) => {
   const { token } = req.params;
-  const data = mdlUsers.getTokenData(token);
+  const data = await mdlUsers.getTokenData(token);
   const { email, code } = data.data;
   mdlUsers.verified(data.data.email);
   res.redirect("/register/emailOk");
