@@ -81,7 +81,7 @@ const {username, email, nombre, apellido, password } = req.body;
   //genero el token a partir de un cod aleatorio y mail  
   let code = uuidv4();
   const token = mdlUsers.getToken({email, code });
-  const link = `<a href=https://trivialidades.herokuapp.com//${ token }>CONFIRMAR EMAIL</a>`;
+  const link = `<a href=https://trivialidades.herokuapp.com/register/confirm/${ token }>CONFIRMAR EMAIL</a>`;
 
   const emailMsg = {
     to: email,
