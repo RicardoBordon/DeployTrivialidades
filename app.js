@@ -5,7 +5,7 @@ const fileupload = require("express-fileupload");
 const hbs = require("hbs");
 const session = require("express-session");
 require("dotenv").config();
-const PORT = 3000;;
+const PORT = process.env.PORT || 3000;;
 
 app.use(express.json());
 
